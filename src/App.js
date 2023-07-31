@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter, Routes ,Route, Link } from "react-router-dom";
-import Login from "./u/login";
-import Register from "./u/register";
-import Home from "./Home";
+import LoginPage from "./u/login";
+import RegisterPage from "./u/register";
+import HomePage from "./Home";
 import AuthRoute from "./u/authRoute";
 
 const App = () => {
@@ -17,10 +17,10 @@ const App = () => {
         </nav>
         
          <Routes>
-          <Route exact path="/login" element={Login} />
-          <Route  exact path="/Home" component={Home}/>
+          <Route exact path="/login" element={ <LoginPage/> } />
+          <Route  exact path="/" component={ HomePage }/>
 
-          {/* <Route exact path="/register" element={<Register/>} /> */}
+          <Route exact path="/register" element={<RegisterPage/>} />
           {/* <Route exact path="/" component={< AuthRoute />} >
            
           </Route> */}

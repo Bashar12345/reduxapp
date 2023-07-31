@@ -41,11 +41,13 @@ export const loginUser = (userData) => (dispatch) => {
     .post('http://127.0.0.1:5000/login', userData)
     .then((res) => {
       // save user token to local storage
-      const { token } = res.data;
+      const token  = res.data.token;
+      console.log(token);
       localStorage.setItem('jwtToken', token);
 
       // decode token to get user data and dispatch auth and user data to the store
       const decoded = jwt_decode(token);
+      console.log(decoded);
       dispatch(setCurrentUser(decoded));
     })
     .catch((err) => console.log(err));
